@@ -31,7 +31,7 @@ span:nth-child(3) {
 
 .task{
   display: flex;
-  width: 50%;
+  width: 46rem;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
   
