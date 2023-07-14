@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  width: 46rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container .circle { 
+  width: 24px;
+  height: 24px;
+  border-radius: 90px;
+  fill: var(--blue);
+  transition: background-color 0.1s;
+}
+
+.container .circle:hover {
+  background-color: var(--blue-dark);
+  border-radius: 90px;
+  opacity:0.6;
+}
+
+.container .teste { 
+  width: 24px;
+  height: 24px;
+  border: 2.5px solid var(--blue);
+  border-radius: 90px;
+  fill: var(--blue);
+  transition: background-color 0.1s;
+}
+
+.container .teste:hover {
+  background-color: var(--blue-dark);
+  border-radius: 90px;
+  opacity:0.6;
+}
+
+.container button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: rgb(0, 0, 0,0);
+  border: 0;
+  color: var(--gray-300);
+  transition: background-color 0.1s;
+}
+
+.container button:hover {
+  color: var(--danger);
+  background-color: var(--gray-400)
+}
