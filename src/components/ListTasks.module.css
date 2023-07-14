@@ -2,7 +2,56 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 77px;
+  margin-top: calc(0px - 1.5rem - 52px);
+}
+
+.task{
+  display: flex;
+  width: 46rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+.task > textarea{
+  width: 100%;
+  background: var(--gray-500);
+  border: 0;
+  resize: none;
+  height: 3.37rem;
+  padding: 1rem;
+  border-radius: 8px;
+  color: var(--gray-100);
+  line-height: 1.4;
+  margin-right: 0.5rem;
+}
+
+.task > textarea:focus{
+  outline: none;
+  border: 1px solid var(--purple-dark);
+}
+
+.task button[type=submit] {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  border: 0;
+  background: var(--blue-dark);
+  color: var(--white);
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 0.875rem;
+
+  transition: background-color 0.1s;
+}
+
+.buttonPlusIcon {
+  margin-left: 8px;
+}
+
+.task button[type=submit]:hover {
+  background: var(--blue);
 }
 
 .info {
@@ -10,14 +59,15 @@
   width: 46rem;
   justify-content: space-between;
   align-items: center;
+  margin-top: 64px;
 }
 
-.header .Newtasks{
+.Newtasks{
   color: var(--blue);
   font-weight: bold;
 }
 
-.header .Endtasks{
+.Endtasks{
   color: var(--purple-dark);
   font-weight: bold;
 }
