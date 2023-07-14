@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react';
 import styles from './ListTasks.module.css'
 import { ClipboardText, PlusCircle } from 'phosphor-react'
 import Task from './Task';
@@ -22,6 +22,22 @@ export default function ListTasks() {
     setNewTaskText('')
   }
 
+  function handleNewTaskChange(event: ChangeEvent<HTMLTextAreaElement>){
+    event.target.setCustomValidity('')
+    setNewTaskText(event.target.value)
+  }
+
+  function handleNewTaskInvalid(event: InvalidEvent<HTMLTextAreaElement>){
+    event.target.setCustomValidity('Esse campo é obrigatorio!');
+  }
+
+  function deleteTask(taskToDelete: string) {
+    const taskWithoutDeleteOne = tasks.filter(task => {
+      return task !== taskToDelete;
+    })
+    setTasks(taskWithoutDeleteOne)
+  }
+
   return (
     <div className={styles.container}>
       <form 
@@ -31,6 +47,9 @@ export default function ListTasks() {
         <textarea 
           name="newTask"
           placeholder='Adicionar uma nova tareda'
+          value={newTaskText}
+          onChange={handleNewTaskChange}
+          onInvalid={handleNewTaskInvalid}
           required
         />          
         <button 
@@ -48,7 +67,12 @@ export default function ListTasks() {
         <ClipboardText size={56} className={styles.icon}/>
         <span>Você ainda não tem tarefas cadastradas</span>
         <p>Crie tarefas e organize seus itens a fazer</p>
-        <Task content='Beber agua' /> 
+        {tasks.map(task => {
+          return <Task 
+          key={task}
+          content={task}
+          onDeleteTask={deleteTask}/> 
+        })}
       </footer>
     </div>
   );
