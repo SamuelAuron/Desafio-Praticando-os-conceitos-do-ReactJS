@@ -23,7 +23,10 @@
   color: var(--gray-100);
   line-height: 1.4;
   margin-right: 0.5rem;
+  overflow:hidden;
 }
+
+
 
 .task > textarea:focus{
   outline: none;
@@ -65,11 +68,29 @@
 .Newtasks{
   color: var(--blue);
   font-weight: bold;
+  font-size: 0.75rem;
+ 
+}
+
+.Newtasks span {
+  background-color: var(--gray-400);
+  border-radius: 8px;
+  color: var(--white);
+  padding: 2px 8px;
 }
 
 .Endtasks{
   color: var(--purple-dark);
   font-weight: bold;
+  font-size: 0.75rem;
+ 
+}
+
+.Endtasks span {
+  background-color: var(--gray-400);
+  border-radius: 8px;
+  color: var(--white);
+  padding: 2px 8px;
 }
 
 .footer {
@@ -78,16 +99,19 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 24px;
-  padding-top: 66px;
   border-top: 1px solid var(--gray-400);
   border-radius: 8px;
 }
 
 .footer .icon {
+  margin-top: 88px;
   margin-bottom: 16px;
 }
 
 .footer span {
   font-weight: bold;
+}
+
+.footer task {
+  margin-top: 24px;
 }
